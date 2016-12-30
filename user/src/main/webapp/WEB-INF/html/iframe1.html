@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div >
+    <font color="#000000" size="4">
+        听一场摇滚，和耳朵一起一醉方休；<br />
+        喝一圈烈酒，让酒腻子们闻风丧胆；<br />
+        开一场cosplay party，二次元万岁；<br />
+        摸一下大蜥蜴，我熊胆威风凌厉；<br />
+        吃三斤驴打滚，翻滚吧肠胃；<br />
+        飚一把摩托车，成为风驰电掣的女王；<br />
+        见一下微博红人，感受马伯庸亲王的慈祥；
+    </font>
+</div>
+<script src="../js/jQuery-2.1.4.min.js"></script>
+<script src="../js/bootstrap/bootstrap.min.js"></script>
+<link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        openModal();
+    });
+
+    //打开模态框
+    function openModal(){
+        var fatherBody = $(window.top.document.body);
+        var id = 'pages';
+        var dialog = $('#' + id);
+        if (dialog.length == 0) {
+            dialog = $('<div class="modal fade" role="dialog" id="' + id + '"/>');
+            dialog.appendTo(fatherBody);
+        }
+        dialog.load("model.html", function() {
+            dialog.modal();
+        });
+    }
+
+</script>
+</body>
+</html>

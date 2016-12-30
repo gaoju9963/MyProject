@@ -1,0 +1,17 @@
+[
+  {
+    "key": "name",
+    "type": "String",
+    "value": [
+      "姓名"
+    ]
+  },
+  {
+    "key": "age",
+    "type": "Integer",
+    "value": [
+      "年龄"
+    ]
+  }
+
+]

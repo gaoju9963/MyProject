@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="JFinal:war">
+    <output-path>$PROJECT_DIR$/JFinal/target</output-path>
+    <root id="archive" name="jfinal.war">
+      <element id="artifact" artifact-name="JFinal:war exploded" />
+    </root>
+  </artifact>
+</component>
