@@ -10,6 +10,10 @@
             width: 33.3%
         }
 
+        body {
+            padding-top: 0px;
+        }
+
         .col-sm-1 {
             width: 13%;
         }

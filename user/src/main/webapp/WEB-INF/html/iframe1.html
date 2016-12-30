@@ -32,7 +32,6 @@
         var dialog = $('#' + id);
         if (dialog.length == 0) {
             dialog = $('<div class="modal fade" role="dialog" id="' + id + '"/>');
-            dialog.appendTo(fatherBody);
         }
         dialog.load("model.html", function() {
             dialog.modal();
