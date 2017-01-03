@@ -65,18 +65,21 @@
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
     </bean>
     <!-- 对静态资源文件的访问-->
-    <mvc:resources mapping="/js/**" location="/WEB-INF/js/" />
-    <mvc:resources mapping="/css/**" location="/WEB-INF/css/" />
+    <mvc:resources mapping="/js/**" location="/WEB-INF/js/"/>
+    <mvc:resources mapping="/css/**" location="/WEB-INF/css/"/>
     <mvc:resources mapping="/picture/**" location="/WEB-INF/picture/"/>
 
-    <!-- 在实际开发中通常都需配置 mvc:annotation-driven标签,这个标签是开启注解 -->
-    <mvc:annotation-driven></mvc:annotation-driven>
     <!-- 拦截器 -->
-    <mvc:interceptors>
-        <!-- 多个拦截器，顺序执行 -->
-        <mvc:interceptor>
-            <mvc:mapping path="/**"/>
-            <bean class="mongo.interceptor.LoginInterceptor"></bean>
-        </mvc:interceptor>
-    </mvc:interceptors>
+    <!--<mvc:interceptors>-->
+        <!--&lt;!&ndash; 多个拦截器，顺序执行 &ndash;&gt;-->
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/**"/>-->
+            <!--&lt;!&ndash;忽略拦截静态文件&ndash;&gt;-->
+            <!--<mvc:exclude-mapping path="/js/**"/>-->
+            <!--<mvc:exclude-mapping path="/css/**"/>-->
+            <!--<mvc:exclude-mapping path="/picture/**"/>-->
+            <!--&lt;!&ndash;拦截&ndash;&gt;-->
+            <!--<bean class="mongo.interceptor.LoginInterceptor"></bean>-->
+        <!--</mvc:interceptor>-->
+    <!--</mvc:interceptors>-->
 </beans>

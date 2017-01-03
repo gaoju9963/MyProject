@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jQuery-2.1.4.min.js"></script>
     <script src="js/tools/pop.js"></script>
     <script src="js/tools/api.js"></script>
     <title>登录</title>
@@ -186,7 +186,7 @@
             <div class="col-xs-12 register-login">
                 <a style="color: #555 !important;">用户登录</a>
                 <a style="color: #aaa !important;" href="javascript:void(0);"
-                   onclick="javascript:window.location.href='register'">注册用户</a></div>
+                   onclick="javascript:window.location.href='registerPage'">注册用户</a></div>
             <div class="register-text register-top">
                 <div class="form-group">
                     <input type="text" id="mobile" name="login_name" placeholder="用户名/手机号" class="form-control"
@@ -210,7 +210,7 @@
             </div>
             <div class="col-xs-12 login-register">
                 <a href="javascript:void(0);" onclick="gotoforgetpsd()">忘记密码？</a>
-                <a href="javascript:void(0);" onclick="javascript:window.location.href='register'">免费注册</a>
+                <a href="javascript:void(0);" onclick="javascript:window.location.href='registerPage'">免费注册</a>
             </div>
         </div>
         <div id="pop_alert" style="color: red"></div>
@@ -245,7 +245,7 @@
                 function (rult) {
                     if (rult.apiRult.success) {
                         $.popMsg.Alert("登录成功");
-                        window.location.href = 'homePage?mobileOrUserName=' + mobileOrUserName;//把用户名传给主页面
+                        window.location.href = 'homePage';//把用户名传给主页面
                     } else {
                         $.popMsg.Alert(rult.apiRult.message);
                     }

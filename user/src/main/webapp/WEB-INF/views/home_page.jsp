@@ -46,7 +46,7 @@
                 <li></li>
                 <li><a href="">Settings</a></li>
                 <li><a href="">Profile</a></li>
-                <li><a href="gotoLogin">退出登录</a></li>
+                <li><a href="loginOut">退出登录</a></li>
             </ul>
             <form class="navbar-form navbar-right">
                 <span id="time_d" class="time"></span>

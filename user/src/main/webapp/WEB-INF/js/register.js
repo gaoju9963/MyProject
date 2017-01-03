@@ -8,6 +8,10 @@ function initEvent() {
     yanzheng();
 }
 function message() {
+    var numError = $('form .onError').length;
+    if (numError) {
+        return false;
+    }
     var phoneNumber = $("#cellPhone").val();
     ryapi.invock("addPhoneCode", {phoneNumber: phoneNumber},
         function (rult) {

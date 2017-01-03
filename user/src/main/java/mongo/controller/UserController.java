@@ -15,8 +15,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.security.MessageDigest;
 import java.util.Date;
 
 /**
@@ -29,7 +29,7 @@ public class UserController extends BaseController {
     @Resource
     SysUserDao sysUserDao;
 
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    @RequestMapping(value = "/registerPage", method = RequestMethod.GET)
     public ModelAndView register() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("/register");
@@ -37,17 +37,17 @@ public class UserController extends BaseController {
     }
 
     @RequestMapping(value = "/gotoLogin", method = RequestMethod.GET)
-    public ModelAndView login() {
+    public ModelAndView gotoLogin() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("/index");
         return modelAndView;
     }
 
     @RequestMapping(value = "/homePage", method = RequestMethod.GET)
-    public ModelAndView homePage(String mobileOrUserName) {
+    public ModelAndView homePage() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("/home_page");
-        modelAndView.addObject("userName", sysUserDao.getNameByMobileOrUserName(mobileOrUserName));//把用户名传给主页面
+//        modelAndView.addObject("userName", sysUserDao.getNameByMobileOrUserName(mobileOrUserName));//把用户名传给主页面
         return modelAndView;
     }
 
@@ -115,7 +115,7 @@ public class UserController extends BaseController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
-    public JsonApiResult login(String mobileOrUserName, String password) {
+    public JsonApiResult login(String mobileOrUserName, String password, HttpServletRequest request) {
         SysUser sysUser = new SysUser();
         sysUser.setMobile(mobileOrUserName);
         if (sysUserDao.login(sysUser) == null) {
@@ -126,7 +126,18 @@ public class UserController extends BaseController {
         if (result == null) {
             return errorApiRult("用户名和密码不匹配");
         }
+        HttpSession session = request.getSession();
+        session.setAttribute("userName", sysUserDao.getNameByMobileOrUserName(mobileOrUserName));
         return apiRult(result);
     }
+
+    @RequestMapping(value = "/loginOut", method = RequestMethod.GET)
+    public ModelAndView loginOut(HttpServletRequest request) {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("/index");
+        request.getSession().removeAttribute("userName");//退出登录，清除缓存
+        return modelAndView;
+    }
+
 
 }
