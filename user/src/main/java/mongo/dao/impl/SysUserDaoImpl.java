@@ -4,12 +4,10 @@ import com.mongodb.AggregationOutput;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
-import jdk.nashorn.internal.objects.annotations.Where;
 import mongo.dao.SysUserDao;
 import mongo.modle.PhoneCode;
 import mongo.modle.SysUser;
 import mongo.util.MD5;
-import mongo.util.SendMsg;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
@@ -17,9 +15,6 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Iterator;
-
-import static mongo.util.MD5.createMD5;
-
 /**
  * Created by pengshu on 2016/12/8.
  */

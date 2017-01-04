@@ -5,9 +5,7 @@ import mongo.modle.SysUser;
 
 import java.io.IOException;
 
-/**
- * Created by pengshu on 2016/12/8.
- */
+
 public interface SysUserDao extends Basic<SysUser>{
 
     boolean AddPhoneCode(PhoneCode phoneCode) throws IOException;

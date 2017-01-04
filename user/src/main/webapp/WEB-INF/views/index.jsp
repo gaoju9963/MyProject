@@ -176,6 +176,9 @@
             height: 40px;
             width: 350px;
         }
+        .back{
+            opacity: 0.5;
+        }
     </style>
 </head>
 <body>

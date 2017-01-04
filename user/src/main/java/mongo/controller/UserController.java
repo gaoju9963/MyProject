@@ -19,9 +19,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Date;
 
-/**
- * Created by pengshu on 2016/12/9.
- */
+
 @Controller
 @Scope("prototype")
 public class UserController extends BaseController {
