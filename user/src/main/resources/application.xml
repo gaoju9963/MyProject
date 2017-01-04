@@ -70,16 +70,16 @@
     <mvc:resources mapping="/picture/**" location="/WEB-INF/picture/"/>
 
     <!-- 拦截器 -->
-    <!--<mvc:interceptors>-->
-        <!--&lt;!&ndash; 多个拦截器，顺序执行 &ndash;&gt;-->
-        <!--<mvc:interceptor>-->
-            <!--<mvc:mapping path="/**"/>-->
-            <!--&lt;!&ndash;忽略拦截静态文件&ndash;&gt;-->
-            <!--<mvc:exclude-mapping path="/js/**"/>-->
-            <!--<mvc:exclude-mapping path="/css/**"/>-->
-            <!--<mvc:exclude-mapping path="/picture/**"/>-->
-            <!--&lt;!&ndash;拦截&ndash;&gt;-->
-            <!--<bean class="mongo.interceptor.LoginInterceptor"></bean>-->
-        <!--</mvc:interceptor>-->
-    <!--</mvc:interceptors>-->
+    <mvc:interceptors>
+        <!-- 多个拦截器，顺序执行 -->
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <!--忽略拦截静态文件-->
+            <mvc:exclude-mapping path="/js/**"/>
+            <mvc:exclude-mapping path="/css/**"/>
+            <mvc:exclude-mapping path="/picture/**"/>
+            <!--拦截-->
+            <bean class="mongo.interceptor.LoginInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

@@ -8,7 +8,7 @@ function initEvent() {
     yanzheng();
 }
 function message() {
-    var numError = $('form .onError').length;
+    var numError = $('form .mobileOnError').length;
     if (numError) {
         return false;
     }
@@ -65,7 +65,7 @@ function yanzheng() {
         if ($(this).is('#cellPhone')) {
             if (this.value == "" || ( this.value != "" && !/^0?1[3|4|5|8][0-9]\d{8}$/.test(this.value) )) {
                 var errorMsg = '请输入正确的手机号.';
-                $parent.append('<small class="formtips onError page">' + errorMsg + '</small>');
+                $parent.append('<small class="formtips onError page mobileOnError">' + errorMsg + '</small>');
             }
         }
         if ($(this).is('#code')) {
