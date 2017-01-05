@@ -84,12 +84,6 @@
                 });
     }
     function yanzheng() {
-//        if ($('#mobile').val() == "") {
-//            var errorMsg = '请输入手机号.';
-//            $.popMsg.Alert(errorMsg);
-//            return false;
-//        }
-        /*$('#mobile').val() == "" || ( $('#mobile').val() != "" && !/^0?1[3|4|5|8][0-9]\d{8}$/.test($('#mobile').val()))*/
         if ($('#mobile').val() == "") {
             var errorMsg = '请输入手机号或用户名.';
             $.popMsg.Alert(errorMsg);
