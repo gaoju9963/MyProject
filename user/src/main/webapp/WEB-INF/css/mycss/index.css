@@ -1,0 +1,170 @@
+html body {
+    background: rgb(243, 243, 243);
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.row {
+    padding: 35px;
+}
+
+.login-menu a {
+    display: inline-block;
+    width: 30%;
+    padding: 0;
+    text-align: right;
+    color: #fff;
+}
+
+.logo-text {
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-left: 20px;
+}
+
+.btn-login {
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    margin-right: 20px;
+}
+
+.btn-register {
+    background-color: rgb(34, 182, 252);
+}
+
+.btn-login,
+.btn-register {
+    padding-left: 30px;
+    padding-right: 30px;
+    float: right;
+}
+
+.login-contain-title {
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.login-contain {
+    margin-top: 100px;
+    margin-top: 150px;
+    text-align: center;
+}
+
+.login-contain .login-input {
+    margin: 0 auto !important;
+    width: 350px;;
+    padding-top: 30px;
+}
+
+.login-foot span {
+    margin-left: 20px;
+    font-size: 24px;
+}
+
+.login-foot span:first-child {
+    font-size: 12px;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body * {
+    font-family: "微软雅黑";
+}
+
+body input {
+    border-radius: 5px !important;
+}
+
+.btn-system {
+    background-color: rgb(34, 182, 252);
+    border-radius: 3px;
+}
+
+.register-contain {
+    padding-top: 75px;
+    text-align: center;
+}
+
+.register-contain form div {
+    border-radius: 3px;
+}
+
+.register-contain .col-xs-12 {
+    margin-top: 10px !important;
+}
+
+.register-top {
+    margin-top: 20px !important;
+}
+
+.register-head span {
+    margin-left: 20px;
+    font-size: 28px;
+}
+
+.register-head * {
+    vertical-align: middle;
+}
+
+.register-login {
+    padding-top: 40px;
+    text-align: center;
+}
+
+.register-login a {
+    color: rgb(105, 105, 105);
+    padding: 20px;
+}
+
+.register-login a:first-child {
+    color: rgb(180, 180, 180);
+    border-right: 1px solid rgb(180, 180, 180);
+    padding: 0;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.register-phone div {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.register-phone button {
+    height: 40px !important;
+    width: 100px !important;
+    float: left !important;
+}
+
+.register-phone input {
+    height: 40px !important;
+    width: 250px !important;
+}
+
+.register-text {
+    text-align: center;
+}
+
+.register-text input {
+    width: 350px !important;
+    height: 40px !important;
+    margin: 0 auto;
+}
+
+.register-text button {
+    height: 40px;
+    width: 350px;
+}
+.back{
+    opacity: 0.5;
+}
