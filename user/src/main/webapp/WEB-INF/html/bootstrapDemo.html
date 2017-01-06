@@ -2,27 +2,38 @@
 <html lang="en">
 <head>
     <script src="../js/jQuery-2.1.4.min.js"></script>
-    <script src="../js/bootstrap/bootstrap.min.js"></script>
-    <script src="../js/bootstrap/bootstrap-dialog.js"></script>
+    <!--<script src="../js/bootstrap/bootstrap.min.js"></script>-->
+    <!--<script src="../js/bootstrap/bootstrap-dialog.js"></script>-->
     <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/bootstrap/bootstrap-dialog.css" rel="stylesheet">
+    <!--<link href="../css/bootstrap/bootstrap-dialog.css" rel="stylesheet">-->
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        .modal-backdrop {
-            z-index: 0 !important;
-        }
+        *{padding: 0;margin: 0;}
+        body{margin: 50px;}
+        ul{list-style-type: none;}
+        ul li{height: 30px; line-height: 30px;}
     </style>
 </head>
 <body>
-<script type="text/javascript">
-    $(document).ready(function () {
-        BootstrapDialog.show({
-            type: BootstrapDialog.TYPE_DEFAULT,
-            title: '测试详情',
-            message: "弹出框"
-        });
-
-    });
+<ul>
+    <li>我是第1条公告</li>
+    <li>我是第2条公告</li>
+    <li>我是第3条公告</li>
+    <li>我是第4条公告</li>
+    <li>我是第5条公告</li>
+    <li>我是第6条公告</li>
+    <li>我是第7条公告</li>
+    <li>我是第8条公告</li>
+    <li>我是第9条公告</li>
+    <li>我是第10条公告</li>
+</ul>
+<script>
+    setInterval(function(){
+        // $('ul :first').css('background', 'red');
+        $('ul').children().first().clone(true).appendTo('ul');
+        $('ul>:first').remove();
+    },1000);
 </script>
-</body></html>
+</body>
+</html>

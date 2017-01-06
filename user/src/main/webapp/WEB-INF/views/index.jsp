@@ -11,15 +11,6 @@
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap/main.css" rel="stylesheet">
     <title>登录</title>
-    <style>
-        /*body{*/
-            /*background: url('picture/shouye.png') !important;*/
-            /*background-size: 100%!important;*/
-            /*background-repeat: no-repeat!important;*/
-            /*background-position: top center!important;*/
-            /*background-color: #000!important;*/
-        /*}*/
-    </style>
 </head>
 <body>
 <div class="container">
@@ -41,7 +32,8 @@
             <div class="col-xs-12 register-text">
                 <div class="form-group">
                     <input type="password" id="password" name="password" placeholder="密码" class="form-control"/>
-                    <%--readonly onfocus="this.removeAttribute('readonly');" autocomplete="off"/>--%>
+                    <input type="password" id="input_temp" name="password" placeholder="密码" class="form-control"
+                           readonly onfocus="this.removeAttribute('readonly');" autocomplete="off" style="display: none"/>
                 </div>
                 <div class="form-message">&nbsp;</div>
             </div>
@@ -63,6 +55,7 @@
 </body>
 <script>
     $(document).ready(function () {
+        $(".bulletin").Scroll({line: 1, speed: 1000, timer: 2000});//修改此数字调整滚动状态
         initEvent();
     });
     function initEvent() {
