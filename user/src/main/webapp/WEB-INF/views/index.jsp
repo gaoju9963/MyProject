@@ -8,7 +8,18 @@
     <script src="js/tools/pop.js"></script>
     <script src="js/tools/api.js"></script>
     <link href="css/mycss/index.css" rel="stylesheet">
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap/main.css" rel="stylesheet">
     <title>登录</title>
+    <style>
+        /*body{*/
+            /*background: url('picture/shouye.png') !important;*/
+            /*background-size: 100%!important;*/
+            /*background-repeat: no-repeat!important;*/
+            /*background-position: top center!important;*/
+            /*background-color: #000!important;*/
+        /*}*/
+    </style>
 </head>
 <body>
 <div class="container">
@@ -19,18 +30,18 @@
                 <a style="color: #555 !important;">用户登录</a>
                 <a style="color: #aaa !important;" href="javascript:void(0);"
                    onclick="javascript:window.location.href='registerPage'">注册用户</a></div>
-            <div class="register-text register-top">
+            <div class="col-xs-12 register-login register-text">
                 <div class="form-group">
-                    <input type="text" id="mobile" name="login_name" placeholder="用户名/手机号" class="form-control"
+                    <input type="text" id="mobile" name="login_name" placeholder="用户名/手机号" class="form-control"/>
                     <%--输入框禁止自动填充--%>
-                           readonly onfocus="this.removeAttribute('readonly');" autocomplete="off"/>
+                    <%--readonly onfocus="this.removeAttribute('readonly');" autocomplete="off"/>--%>
                 </div>
                 <div class="form-message">&nbsp;</div>
             </div>
             <div class="col-xs-12 register-text">
                 <div class="form-group">
-                    <input type="password" id="password" name="password" placeholder="密码" class="form-control"
-                           readonly onfocus="this.removeAttribute('readonly');" autocomplete="off"/>
+                    <input type="password" id="password" name="password" placeholder="密码" class="form-control"/>
+                    <%--readonly onfocus="this.removeAttribute('readonly');" autocomplete="off"/>--%>
                 </div>
                 <div class="form-message">&nbsp;</div>
             </div>

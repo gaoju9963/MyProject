@@ -99,6 +99,15 @@ public class nuonuobangke {
                         .append("as", "case"));
 
         DBObject unwind_1 = new BasicDBObject("$unwind", "$case");
+        //查询正在跟进的状态
+        DBObject lookupStatus = new BasicDBObject("$lookup",
+                new BasicDBObject("from", "caseStatusInfo")
+                        .append("localField", "caseId")
+                        .append("foreignField", "caseId")
+                        .append("as", "caseStatusInfo"));
+        DBObject unwindStatus = new BasicDBObject("$unwind", "$caseStatusInfo");
+        DBObject matchStatus = new BasicDBObject("$match", new BasicDBObject("caseStatusInfo.caseStatus", "follow_up"));
+
         DBObject groupFields = new BasicDBObject("_id", "$caseId")
                 .append("infos",
                         new BasicDBObject("$push",
@@ -117,7 +126,7 @@ public class nuonuobangke {
         DBObject unwind_user = new BasicDBObject("$unwind", "$user");
 
         //DBObject allowDiskUse = new BasicDBObject("allowDiskUse", true);
-        AggregationOutput output = conn.aggregate(Arrays.asList(match, sort, lookup, unwind_1, group, lookup_user, unwind_user));
+        AggregationOutput output = conn.aggregate(Arrays.asList(match, sort, lookup, unwind_1, lookupStatus, unwindStatus, matchStatus, group, lookup_user, unwind_user));
         Iterator<DBObject> it = output.results().iterator();
 
         FileOutputStream os = new FileOutputStream(outFilePath);

@@ -8,9 +8,20 @@
     <script src="js/tools/api.js"></script>
     <script src="js/tools/pop.js"></script>
     <link href="css/mycss/register.css" rel="stylesheet">
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap/main.css" rel="stylesheet">
     <title>注册</title>
+    <style>
+        body{
+            background: url('picture/shouye.png') !important;
+            background-size: 100%!important;
+            background-repeat: no-repeat!important;
+            background-position: top center!important;
+            background-color: #000!important;
+        }
+    </style>
 </head>
-<body id="body">
+<body id="body" >
 <div class="container">
     <form id="loginController">
         <div class="row register-contain">
@@ -21,10 +32,9 @@
                 <a>注册用户</a></div>
             <div class="register-top register-phone">
                 <div class="form-group">
-                    <div class="input-group input-group-sm">
+                    <div class="input-group register-login input-group-sm">
                         <input type="text" style="font-size: 14px;" class="form-control" id="cellPhone" name="cellPhone"
-                               placeholder="手机" readonly onfocus="this.removeAttribute('readonly');"
-                               autocomplete="off"/>
+                               placeholder="手机"/>
                         <span class="input-group-btn">
                       <button onclick="message()" class="btn btn-info btn-system" type="button">获取验证码</button>
                     </span>
@@ -34,22 +44,19 @@
             </div>
             <div class="col-xs-12 register-text">
                 <div class="form-group">
-                    <input type="text" id="code" name="code" placeholder="验证码" class="form-control"
-                           readonly onfocus="this.removeAttribute('readonly');" autocomplete="off"/>
+                    <input type="text" id="code" name="code" placeholder="验证码" class="form-control"/>
                 </div>
                 <div class="form-message">&nbsp;</div>
             </div>
             <div class="col-xs-12 register-text">
                 <div class="form-group">
-                    <input type="text" id="userName" name="login_name" placeholder="用户名" class="form-control"
-                           readonly onfocus="this.removeAttribute('readonly');" autocomplete="off"/>
+                    <input type="text" id="userName" name="login_name" placeholder="用户名" class="form-control"/>
                 </div>
                 <div class="form-message">&nbsp;</div>
             </div>
             <div class="col-xs-12 register-text">
                 <div class="form-group">
-                    <input type="password" id="password" name="password" placeholder="密码" class="form-control"
-                           readonly onfocus="this.removeAttribute('readonly');" autocomplete="off"/>
+                    <input type="password" id="password" name="password" placeholder="密码" class="form-control"/>
                 </div>
                 <div class="form-message">&nbsp;</div>
             </div>

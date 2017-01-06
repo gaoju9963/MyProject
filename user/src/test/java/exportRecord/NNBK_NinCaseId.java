@@ -81,6 +81,17 @@ public class NNBK_NinCaseId {
                         .append("as", "case"));
 
         DBObject unwind_1 = new BasicDBObject("$unwind", "$case");
+
+        DBObject lookupStatus = new BasicDBObject("$lookup",
+                new BasicDBObject("from", "caseStatusInfo")
+                        .append("localField", "caseId")
+                        .append("foreignField", "caseId")
+                        .append("as", "caseStatusInfo"));
+        DBObject unwindStatus = new BasicDBObject("$unwind", "$caseStatusInfo");
+
+        DBObject matchStatus = new BasicDBObject("$match", new BasicDBObject("caseStatusInfo.caseStatus", "follow_up"));
+
+
         DBObject groupFields = new BasicDBObject("_id", "$caseId")
                 .append("infos",
                         new BasicDBObject("$push",
@@ -99,7 +110,7 @@ public class NNBK_NinCaseId {
         DBObject unwind_user = new BasicDBObject("$unwind", "$user");
 
         //DBObject allowDiskUse = new BasicDBObject("allowDiskUse", true);
-        return conn.aggregate(Arrays.asList(match, sort, lookup, unwind_1, group, lookup_user, unwind_user));
+        return conn.aggregate(Arrays.asList(match, sort, lookup, unwind_1,lookupStatus,unwindStatus,matchStatus, group, lookup_user, unwind_user));
     }
 
 
