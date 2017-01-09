@@ -9,7 +9,7 @@
     <script src="js/tools/pop.js"></script>
     <link href="css/mycss/register.css" rel="stylesheet">
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap/main.css" rel="stylesheet">
+    <link href="css/mycss/login.css" rel="stylesheet">
     <title>注册</title>
     <style>
         body{

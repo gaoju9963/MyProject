@@ -1,4 +1,3 @@
-
 #div1 {
     bottom: 0;
     left: 0;
@@ -40,7 +39,7 @@
     text-shadow: 0 1px 0 #000;
 }
 
-.close a {
+.close_notice a {
     float: right;
     margin: 0 10px 0 0;
 }
@@ -70,6 +69,10 @@ a {
 
 #gg li a:hover {
     color: red;
+}
+
+#gg img {
+    vertical-align: bottom;
 }
 
 ul li {

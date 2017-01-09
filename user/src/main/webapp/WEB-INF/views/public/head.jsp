@@ -21,7 +21,6 @@
 <script src="js/jquery/jquery.formautofill.js"></script>
 <script src="js/My97DatePicker/WdatePicker.js"></script>
 <script src="js/livingsoil.js"></script>
-<link href="css/mycss/notice.css" rel="stylesheet">
 <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
 <link href="css/bootstrap/dashboard.css" rel="stylesheet">
 <link href="css/bootstrap/bootstrap-table.css" rel="stylesheet">

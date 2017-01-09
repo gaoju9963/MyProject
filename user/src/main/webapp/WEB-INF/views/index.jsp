@@ -9,7 +9,7 @@
     <script src="js/tools/api.js"></script>
     <link href="css/mycss/index.css" rel="stylesheet">
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap/main.css" rel="stylesheet">
+    <link href="css/mycss/login.css" rel="stylesheet">
     <title>登录</title>
 </head>
 <body>
@@ -55,7 +55,6 @@
 </body>
 <script>
     $(document).ready(function () {
-        $(".bulletin").Scroll({line: 1, speed: 1000, timer: 2000});//修改此数字调整滚动状态
         initEvent();
     });
     function initEvent() {
