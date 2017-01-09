@@ -13,7 +13,6 @@
 <script src="js/bootstrap/bootstrap-table-zh-CN.js"></script>
 <script src="js/bootstrap/bootstrap.min.js"></script>
 <script src="js/bootstrap/bootstrap-dialog.js"></script>
-<script src="js/bootstrap/docs.min.js"></script>
 <script src="js/bootstrap/bootstrapValidator.js"></script>
 <script src="js/jquery/formValidation.min.js"></script>
 <script src="js/jquery/framework/bootstrap.min.js"></script>
