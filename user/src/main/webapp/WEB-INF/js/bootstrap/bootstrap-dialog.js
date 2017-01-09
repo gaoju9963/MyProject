@@ -139,7 +139,8 @@
                 if (openedDialogs.length === 0) {
                     this.$body.removeClass('modal-open');
                 }
-                this.resetAdjustments();
+                /*我曹，这是个啥玩意儿，压根就没有这个方法，放在这像坨屎*/
+                // this.resetAdjustments();
                 this.resetScrollbar();
                 this.$element.trigger('hidden.bs.modal');
             }, this));
