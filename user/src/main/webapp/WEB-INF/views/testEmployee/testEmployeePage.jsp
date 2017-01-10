@@ -239,7 +239,6 @@
                 $('#table').bootstrapTable('load', data);
             }
         });
-
     }
 
     function detailFormatter(value, row, index) {
