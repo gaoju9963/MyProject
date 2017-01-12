@@ -33,7 +33,8 @@
                 <div class="form-group">
                     <input type="password" id="password" name="password" placeholder="密码" class="form-control"/>
                     <input type="password" id="input_temp" name="password" placeholder="密码" class="form-control"
-                           readonly onfocus="this.removeAttribute('readonly');" autocomplete="off" style="display: none"/>
+                           readonly onfocus="this.removeAttribute('readonly');" autocomplete="off"
+                           style="display: none"/>
                 </div>
                 <div class="form-message">&nbsp;</div>
             </div>
@@ -50,7 +51,6 @@
         </div>
         <div id="pop_alert" style="color: red"></div>
     </form>
-</div>
 </div>
 </body>
 <script>

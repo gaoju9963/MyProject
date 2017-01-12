@@ -16,19 +16,22 @@ public class LoginInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String url = request.getRequestURI(); //获取请求的URL
         //以下URL可以公开访问
-        if (url.indexOf("/user/login") >= 0) {
+        if (url.indexOf("/login") >= 0) {
             return true;
         }
-        if (url.indexOf("/user/addPhoneCode") >= 0) {
+        if (url.indexOf("/addPhoneCode") >= 0) {
             return true;
         }
-        if (url.indexOf("/user/register") >= 0) {
+        if (url.indexOf("/register") >= 0) {
             return true;
         }
-        if (url.indexOf("/user/userNameIsHave") >= 0) {
+        if (url.indexOf("/userNameIsHave") >= 0) {
             return true;
         }
-        if (url.indexOf("/user/register") >= 0) {
+        if (url.indexOf("/register") >= 0) {
+            return true;
+        }
+        if (url.indexOf("/admin") >= 0) {
             return true;
         }
         HttpSession session = request.getSession();//获取Session
@@ -37,6 +40,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             return true;
         }
         request.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response); //不符合条件的，跳转到登录界面
+//        response.sendRedirect("/");
         return false;
     }
 
