@@ -1,4 +1,6 @@
 
+import mongo.admin_dao.AdminDao;
+import mongo.admin_modle.Administrator;
 import mongo.modle.DropDownMenu;
 import mongo.modle.Test;
 import mongo.util.MongoCreateId;
@@ -9,6 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import javax.annotation.Resource;
+import java.util.Date;
 
 /**
  * Created by pengshu on 2016/12/14.
@@ -43,6 +46,18 @@ public class addTest {
             dropDownMenu.setValue("测试" + i);
             mongoTemplate.insert(dropDownMenu);
         }
+    }
+
+    @Resource
+    AdminDao adminDao;
+
+    @org.junit.Test
+    public void addAdmin() throws Exception {
+        Administrator administrator = new Administrator();
+        administrator.setName("admin");
+        administrator.setPassword("123456");
+        administrator.setCreateDate(new Date());
+        adminDao.add(administrator);
     }
 
 }

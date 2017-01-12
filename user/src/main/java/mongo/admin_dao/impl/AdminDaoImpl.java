@@ -6,6 +6,8 @@ import mongo.admin_modle.Administrator;
 import mongo.dao.impl.BasicImpl;
 import mongo.util.MongoCreateId;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -25,5 +27,13 @@ public class AdminDaoImpl extends BasicImpl<Administrator> implements AdminDao {
         administrator.setRowId(MongoCreateId.createId(collection));
         mongoTemplate.insert(administrator);
         return true;
+    }
+
+    @Override
+    public Administrator adminLogin(Administrator administrator) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("name").is(administrator.getName()))
+                .addCriteria(Criteria.where("password").is(administrator.getPassword()));
+        return mongoTemplate.findOne(query, Administrator.class);
     }
 }

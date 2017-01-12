@@ -8,4 +8,6 @@ import mongo.dao.Basic;
  */
 public interface AdminDao extends Basic<Administrator> {
     boolean addAdministrator(Administrator administrator);
+
+    Administrator adminLogin(Administrator administrator);
 }
