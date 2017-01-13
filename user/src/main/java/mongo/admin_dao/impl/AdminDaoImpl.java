@@ -11,6 +11,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Created by pengshu on 2017/1/11.
@@ -35,5 +36,10 @@ public class AdminDaoImpl extends BasicImpl<Administrator> implements AdminDao {
         query.addCriteria(Criteria.where("name").is(administrator.getName()))
                 .addCriteria(Criteria.where("password").is(administrator.getPassword()));
         return mongoTemplate.findOne(query, Administrator.class);
+    }
+
+    @Override
+    public List<Administrator> listAdmin() {
+        return mongoTemplate.find(null,Administrator.class);
     }
 }

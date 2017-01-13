@@ -2,7 +2,6 @@ package mongo.admin_controller;
 
 import mongo.admin_dao.AdminDao;
 import mongo.admin_modle.Administrator;
-import mongo.util.ApiResult;
 import mongo.util.BaseController;
 import mongo.util.JsonApiResult;
 import org.springframework.context.annotation.Scope;
@@ -28,11 +27,26 @@ public class AdminController extends BaseController {
     @RequestMapping(value = "/admin_index", method = RequestMethod.GET)
     public ModelAndView test() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("/admin/admin_index");
+        modelAndView.setViewName("/admin/loginPage/admin_index");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/gotoHome", method = RequestMethod.GET)
+    public ModelAndView gotoHome() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("/admin/homePage/home");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/gotoAdminPage", method = RequestMethod.GET)
+    public ModelAndView gotoAdminPage() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("/admin/administratorPage/administrator");
         return modelAndView;
     }
 
     @RequestMapping(value = "/adminLogin", method = RequestMethod.POST)
+    @ResponseBody
     public JsonApiResult adminLogin(String name, String password) {
         Administrator administrator = new Administrator();
         administrator.setName(name);

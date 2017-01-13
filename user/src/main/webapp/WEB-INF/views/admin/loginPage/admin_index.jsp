@@ -35,9 +35,6 @@
             <div class="col-xs-12 register-text">
                 <input type="button" class="btn btn-info btn-system" value="登录"/>
             </div>
-            <%--<div class="col-xs-12">--%>
-            <%--<div class="line1" style="width: 350px;"></div>--%>
-            <%--</div>--%>
         </div>
         <div id="pop_alert" style="color: red"></div>
     </form>
@@ -55,14 +52,19 @@
     function adminLogin() {
         var name = $("#name").val();
         var password = $("#password").val();
-        ryapi.invock("/admin/adminLogin", {name: name, password: password},
-                function (rult) {
-                    if (rult.apiRult.success) {
-                        $.popMsg.Alert("登录成功");
-                    } else {
-                        $.popMsg.Alert(rult.apiRult.message);
-                    }
-                });
+        $.ajax({
+            url: "/admin/adminLogin",
+            data: {name: name, password: password},
+            type: "post",
+            dataType: "json",
+            success: function (value) {
+                if (value.success) {
+                    window.location.href = '/admin/gotoHome';
+                }else{
+                    $.popMsg.Alert(value.message);
+                }
+            }
+        });
     }
 </script>
 </html>

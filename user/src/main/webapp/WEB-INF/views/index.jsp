@@ -106,3 +106,4 @@
     }
 </script>
 </html>
+<% out.flush(); %>
